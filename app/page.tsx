@@ -17,8 +17,8 @@ const copy = {
     seeMenu: "Découvrir le menu",
     findUs: "Nous trouver",
     terrace: "Terrasse au bord de l’eau",
-    seasonal: "Heures saisonnières",
-    seasonalBody: "Consultez Instagram pour les heures du jour",
+    seasonal: "Heures d’ouverture",
+    seasonalBody: "Lun–jeu et dim 11 h–20 h 30 • ven 11 h–21 h • sam 11 h 30–21 h",
     chapter: "Un café qui ressemble à une escapade",
     storyTitle: "À quelques minutes d’Ottawa. À mille lieues du quotidien.",
     storyBody:
@@ -49,7 +49,15 @@ const copy = {
     visitTitle: "Votre table vous attend.",
     addressLabel: "Adresse",
     hoursLabel: "Heures",
-    hoursValue: "Variables selon la saison",
+    hoursValue: [
+      "Lundi 11 h–20 h 30",
+      "Mardi 11 h–20 h 30",
+      "Mercredi 11 h–20 h 30",
+      "Jeudi 11 h–20 h 30",
+      "Vendredi 11 h–21 h",
+      "Samedi 11 h 30–21 h",
+      "Dimanche 11 h–20 h 30",
+    ],
     phoneLabel: "Téléphone",
     amenities: "Stationnement gratuit • Wi-Fi • Accessible • Terrasse",
     maps: "Ouvrir dans Google Maps",
@@ -67,8 +75,8 @@ const copy = {
     seeMenu: "Explore the menu",
     findUs: "Find us",
     terrace: "Waterfront terrace",
-    seasonal: "Seasonal hours",
-    seasonalBody: "Check Instagram for today’s hours",
+    seasonal: "Opening hours",
+    seasonalBody: "Mon–Thu & Sun 11–8:30 • Fri 11–9 • Sat 11:30–9",
     chapter: "A café that feels like an escape",
     storyTitle: "Minutes from Ottawa. Miles from the everyday.",
     storyBody:
@@ -99,7 +107,15 @@ const copy = {
     visitTitle: "Your table is waiting.",
     addressLabel: "Address",
     hoursLabel: "Hours",
-    hoursValue: "Seasonal — check before visiting",
+    hoursValue: [
+      "Monday 11 a.m.–8:30 p.m.",
+      "Tuesday 11 a.m.–8:30 p.m.",
+      "Wednesday 11 a.m.–8:30 p.m.",
+      "Thursday 11 a.m.–8:30 p.m.",
+      "Friday 11 a.m.–9 p.m.",
+      "Saturday 11:30 a.m.–9 p.m.",
+      "Sunday 11 a.m.–8:30 p.m.",
+    ],
     phoneLabel: "Phone",
     amenities: "Free parking • Wi-Fi • Accessible • Patio seating",
     maps: "Open in Google Maps",
@@ -296,7 +312,7 @@ export default function Home() {
         <div className="visit-heading"><p className="eyebrow">{t.visitEyebrow}</p><h2>{t.visitTitle}</h2></div>
         <div className="visit-grid">
           <div><small>{t.addressLabel}</small><strong>1071, rue Jacques-Cartier<br />Gatineau, QC J8T 2W3</strong></div>
-          <div><small>{t.hoursLabel}</small><strong>{t.hoursValue}</strong><a href="https://www.instagram.com/cafefwanest/" target="_blank" rel="noreferrer">Instagram ↗</a></div>
+          <div><small>{t.hoursLabel}</small><strong>{t.hoursValue.map((line) => <span key={line}>{line}<br /></span>)}</strong><a href="https://www.instagram.com/cafefwanest/" target="_blank" rel="noreferrer">Instagram ↗</a></div>
           <div><small>{t.phoneLabel}</small><strong><a href="tel:+18194143600">(819) 414-3600</a></strong></div>
         </div>
         <p className="amenities">{t.amenities}</p>
